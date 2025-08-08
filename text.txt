@@ -1,0 +1,15 @@
+CREATE TABLE `codigos_email` (
+   `codigo_id` int NOT NULL AUTO_INCREMENT,
+   `email` varchar(255) NOT NULL,
+   `codigo` varchar(6) NOT NULL,
+   `data_criacao` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+   `data_expiracao` timestamp NOT NULL,
+   `usado` tinyint(1) DEFAULT '0',
+   `ativo` tinyint(1) DEFAULT '1',
+   PRIMARY KEY (`codigo_id`),
+   KEY `idx_email` (`email`),
+   KEY `idx_codigo` (`codigo`),
+   KEY `idx_data_expiracao` (`data_expiracao`),
+   KEY `idx_ativo` (`ativo`),
+   KEY `idx_usado` (`usado`)
+ ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
